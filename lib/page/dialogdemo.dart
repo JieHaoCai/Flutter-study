@@ -32,8 +32,33 @@ class _DialogPageState extends State<DialogPage> {
     print(result);
   }
 
-  void _selectDialog() {
-    print("_selectDialog");
+  void _selectDialog() async {
+    var result = await showDialog(
+        context: context,
+        builder: (context) {
+          return SimpleDialog(
+            title: Text("请选择语言："),
+            children: [
+              SimpleDialogOption(
+                child: Text("汉语"),
+                onPressed: () => {Navigator.of(context).pop("汗")},
+              ),
+              SimpleDialogOption(
+                child: Text("日语"),
+                onPressed: () => {Navigator.of(context).pop("ri")},
+              ),
+              SimpleDialogOption(
+                child: Text("法语"),
+                onPressed: () => {Navigator.of(context).pop("fa")},
+              ),
+              SimpleDialogOption(
+                child: Text("英语"),
+                onPressed: () => {Navigator.of(context).pop("en")},
+              ),
+            ],
+          );
+        });
+    print(result);
   }
 
   void _modelDialog() {
