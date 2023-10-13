@@ -10,8 +10,21 @@ class MessagePage extends StatefulWidget {
 class _MessagePageState extends State<MessagePage> {
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('消息'),
+    return Scaffold(
+      appBar: AppBar(title: Text('命令路由')),
+      body: Center(
+        child: Column(
+          children: [
+            const Text("这是消息页面"),
+            ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/');
+                },
+                icon: const Icon(Icons.home),
+                label: const Text('首页'))
+          ],
+        ),
+      ),
     );
   }
 }

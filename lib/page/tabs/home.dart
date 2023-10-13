@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
                 //使用替换路由跳转，相当于干掉前一个页面
                 // Navigator.of(context).pushReplacementNamed("/home")
 
-                //直接跳转到message页面
+                //直接跳转到message页面，这种跳转方式相当于redirect，会删除前面一个页面
                 Navigator.of(context).pushAndRemoveUntil(
                     MaterialPageRoute(builder: (context) {
                   return MessagePage();

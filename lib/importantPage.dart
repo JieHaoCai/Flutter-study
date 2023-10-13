@@ -7,7 +7,7 @@ void main() {
     //去除debug
     debugShowCheckedModeBanner: false,
     title: "Flutter Demo",
-    home: Tabs(),
+    home: MyTabs(),
   ));
 }
 
