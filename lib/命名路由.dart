@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
-//引入路由
-import './router/index.dart';
+import './page/tabs.dart';
+
+import './page/search.dart';
+import './page/tabs/categroy.dart';
+import './page/tabs/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,10 +20,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Flutter Demo",
       // home: Tabs(),
-      //初始化路由
-      initialRoute: "/",
       //命名路由
-      routes: router(context),
+      routes: {
+        "/search": (context) => const SearchPage(),
+        "/": (context) => const HomePage(),
+        "/categroy": (context) => const CatrgroyPage()
+      },
     );
   }
 }
