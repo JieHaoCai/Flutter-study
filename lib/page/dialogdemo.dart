@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class DialogPage extends StatefulWidget {
   const DialogPage({super.key});
@@ -34,26 +35,29 @@ class _DialogPageState extends State<DialogPage> {
 
   void _selectDialog() async {
     var result = await showDialog(
+        //点击灰色背景是否关闭弹出框
+        barrierDismissible: false,
         context: context,
         builder: (context) {
           return SimpleDialog(
-            title: Text("请选择语言："),
+            title: const Text("请选择语言："),
             children: [
               SimpleDialogOption(
-                child: Text("汉语"),
+                child: const Text("汉语"),
                 onPressed: () => {Navigator.of(context).pop("汗")},
               ),
               SimpleDialogOption(
-                child: Text("日语"),
+                child: const Text("日语"),
                 onPressed: () => {Navigator.of(context).pop("ri")},
               ),
               SimpleDialogOption(
-                child: Text("法语"),
+                child: const Text("法语"),
                 onPressed: () => {Navigator.of(context).pop("fa")},
               ),
               SimpleDialogOption(
-                child: Text("英语"),
-                onPressed: () => {Navigator.of(context).pop("en")},
+                child: const Text("英语"),
+                // 这种方式也可以
+                onPressed: () => {Navigator.pop(context, "en")},
               ),
             ],
           );
@@ -61,12 +65,48 @@ class _DialogPageState extends State<DialogPage> {
     print(result);
   }
 
-  void _modelDialog() {
-    print("_modelDialog");
+  void _modelDialog() async {
+    var result = await showModalBottomSheet(
+        context: context,
+        builder: (context) {
+          return Container(
+            height: 300, //默认是自适应高度
+            child: Column(
+              children: [
+                ListTile(
+                  title: const Text("商品1"),
+                  onTap: () {
+                    Navigator.pop(context, "商品1");
+                  },
+                ),
+                ListTile(
+                  title: const Text("商品2"),
+                  onTap: () {
+                    Navigator.pop(context, "商品2");
+                  },
+                ),
+                ListTile(
+                  title: const Text("商品3"),
+                  onTap: () {
+                    Navigator.pop(context, "商品3");
+                  },
+                )
+              ],
+            ),
+          );
+        });
+    print(result);
   }
 
   void _toast() {
-    print("_toast");
+    Fluttertoast.showToast(
+        msg: "This is Center Short Toast",
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.CENTER,
+        timeInSecForIosWeb: 1,
+        backgroundColor: Colors.red,
+        textColor: Colors.white,
+        fontSize: 16.0);
   }
 
   @override
