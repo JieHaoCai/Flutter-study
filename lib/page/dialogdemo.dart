@@ -100,11 +100,11 @@ class _DialogPageState extends State<DialogPage> {
 
   void _toast() {
     Fluttertoast.showToast(
-        msg: "This is Center Short Toast",
-        toastLength: Toast.LENGTH_SHORT,
-        gravity: ToastGravity.CENTER,
-        timeInSecForIosWeb: 1,
-        backgroundColor: Colors.red,
+        msg: "提示信息",
+        toastLength: Toast.LENGTH_SHORT, //这个只针对安卓平台
+        gravity: ToastGravity.TOP,
+        timeInSecForIosWeb: 1, //提示时间只支持ios和web
+        backgroundColor: Colors.black,
         textColor: Colors.white,
         fontSize: 16.0);
   }

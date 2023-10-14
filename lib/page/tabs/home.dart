@@ -28,7 +28,22 @@ class _HomePageState extends State<HomePage> {
                   return MessagePage();
                 }), (route) => false);
               },
-              child: Text("命名路由跳转"))
+              child: Text("命名路由跳转")),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed("/pageview");
+              },
+              child: Text("类似轮播效果或者抖音效果")),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed("/pagebuilder");
+              },
+              child: Text("使用pageBuilder")),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed("/pagefull");
+              },
+              child: Text("上拉无限加载")),
         ],
       ),
     );
