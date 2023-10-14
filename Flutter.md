@@ -206,5 +206,74 @@ flutter devices //使用真机运行
 
 ![image-20231012112958050](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20231012112958050.png)
 
-	
-  	
+
+
+# 使用第三方插件
+
+  进入官方网站搜索插件（推荐使用加速器）：
+
+```
+https://pub.dev/
+```
+
+进入之后搜索所需插件的安装方式即可
+
+**这里的重点是安装之后运行到模拟器这一步可能会出现cocospods安装失败甚至安装之后无法使用的问题。**
+
+
+
+## cocospods安装问题
+
+首先你需要安装`homebrew`，这里前面有教程不再赘述
+
+第二步，检查ruby版本，输入命令`ruby -v`，这里m系列芯片的电脑默认是自带ruby的，但是版本过低，我们需要更新ruby
+
+使用：
+
+```
+brew install ruby
+```
+
+默认会下载最新的版本
+
+同时记得要去bash_profile编辑环境变量，否则可能会出现ruby系统版本没有改变的问题
+
+```
+export PATH=/opt/homebrew/opt/ruby@3.2/bin:$PATH
+```
+
+查看ruby安装路径，可以在`/opt/homebrew/opt`目录中查看
+
+最关键的就是更新gem版本，这一步就会下载cocoapods
+
+```
+sudo gem update --system -n /usr/local/bin
+```
+
+可以通过查看命令判断cocoapods是否成功下载
+
+```
+gem list
+```
+
+如果出现cocoapods相关多个软件，说明安装成功
+
+输入命令：判断是否安装成功，如果成功，只会返回版本号，否则都算不成功
+
+```
+pod --version
+```
+
+### 注意
+
+如果输入pod --version出现报错，很可能是由于gem中的activeSupport版本有bug，这个时候你需要安装稳定版的activeSupport 7.0.8，有问题的版本就是7.1.0之后的版本
+
+```
+sudo gem install activesupport -v 7.0.8 
+```
+
+```
+sudo gem uninstall activesupport -v 最新版
+```
+
+这样就可以使用第三方插件并运行在模拟器上面了。
