@@ -7,6 +7,7 @@ import './tabs/setting.dart';
 import './tabs/message.dart';
 import './tabs/user.dart';
 import './search.dart';
+import 'package:get/get.dart';
 
 //引入左侧栏
 import './drawer/leftdraw/leftdraw.dart';
@@ -45,12 +46,13 @@ class _MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     //跳转页面(基本路由跳转)
     void navigata() {
-      Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-        //跳转并传参
-        return const SearchPage(
-          title: '你好',
-        );
-      }));
+      // Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+      //   //跳转并传参
+      //   return const SearchPage(
+      //     title: '你好',
+      //   );
+      // }));
+      Get.toNamed("/search?hello=11111", arguments: {"msg": "hello"});
     }
 
     return Scaffold(
@@ -129,7 +131,7 @@ class _MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin {
       //     )
       //   ],
       // ),
-      //浮动按钮
+      //浮动按钮（中间按钮）
       floatingActionButton: Container(
           width: 60,
           height: 60,
@@ -148,6 +150,7 @@ class _MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin {
           )),
       //配置浮动按钮布局
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      // 底部导航栏
       bottomNavigationBar: BottomNavigationBar(
         //如果底部有4个或者以上的需要配置这个参数
         type: BottomNavigationBarType.fixed,
