@@ -59,6 +59,16 @@ class _HomePageState extends State<HomePage> {
                 Get.toNamed("/mygetx");
               },
               child: const Text("getx的响应式状态管理")),
+          ElevatedButton(
+              onPressed: () {
+                Get.toNamed("/myinput");
+              },
+              child: const Text("测试输入框相关业务")),
+          ElevatedButton(
+              onPressed: () {
+                Get.toNamed("/mywebview");
+              },
+              child: const Text("测试webview相关业务")),
         ],
       ),
     );

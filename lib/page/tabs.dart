@@ -34,7 +34,7 @@ class _MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin {
 
   int _currentIndex = 0;
   // 引入其他页面
-  final List<Map<String, dynamic>> _pages = const [
+  final List<Map<String, dynamic>> _pages = [
     {"title": '首页', "component": HomePage(), "icon": Icons.home},
     {"title": '分类', "component": CatrgroyPage(), "icon": Icons.category},
     {"title": '消息', "component": MessagePage(), "icon": Icons.message},
@@ -150,7 +150,7 @@ class _MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin {
           )),
       //配置浮动按钮布局
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      // 底部导航栏
+      // 底部导航栏(重要)
       bottomNavigationBar: BottomNavigationBar(
         //如果底部有4个或者以上的需要配置这个参数
         type: BottomNavigationBarType.fixed,

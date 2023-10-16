@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+//导入页面
 import '../page/tabs.dart';
 import '../page/search.dart';
 import '../page/tabs/categroy.dart';
@@ -10,8 +11,10 @@ import '../page/pageviewbuilder.dart';
 import '../page/pageFulldemo.dart';
 import '../page/anmationListDemo.dart';
 import '../page/getxstatedemo.dart';
+import '../page/inputdemo.dart';
+import '../page/webviewdemo.dart';
 //引入中间件
-import "../middleware/shopMiddleware.dart";
+import 'middleware/shopMiddleware.dart';
 
 class AppPage {
   static final routes = [
@@ -70,7 +73,17 @@ class AppPage {
         name: "/mygetx",
         page: () => MyGetXState(),
         transition: Transition.leftToRight //设置单个页面跳转的方式
-        )
+        ),
+    GetPage(
+        name: "/myinput",
+        page: () => MyInputPage(),
+        transition: Transition.rightToLeft //设置单个页面跳转的方式
+        ),
+    // GetPage(
+    //     name: "/mywebview",
+    //     page: () => const MyWebviewPage(),
+    //     transition: Transition.rightToLeft //设置单个页面跳转的方式
+    //     ),
   ];
 }
 

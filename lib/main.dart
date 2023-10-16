@@ -2,13 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 //引入路由
 import './router/index.dart';
+import 'store/user.dart';
+import './store/index.dart';
 
 void main() {
-  runApp(const MyApp());
+  Store(); // 初始化Store实例
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
+
+  //页面初始化时先放入控制器,先初始化store的值
+  // final UserController user = Get.put(UserController());
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +29,7 @@ class MyApp extends StatelessWidget {
       // 以后统一使用这种方式去管理路由
       getPages: AppPage.routes,
       // onGenerateInitialRoutes: router(context),
-      // home: TestGetDialog(),
+      // home: TestGetDialog(), //这个的优先级比getPage的优先级高
     );
   }
 }
