@@ -11,7 +11,7 @@ class Store {
   factory Store() {
     return _instance;
   }
-
+  //将所有的store都放入这里
   Store._internal() {
     Get.put(UserController());
   }
