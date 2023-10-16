@@ -12,19 +12,20 @@ class CatrgroyPage extends StatefulWidget {
 
 class _CatrgroyPageState extends State<CatrgroyPage> {
   //通过Get.find获取同一个控制器实例，可以使用数据,注意，只有先put控制器，才能find，否则会报错
-  final UserController userfind = Get.find<UserController>();
+  final UserController userController = Get.find<UserController>();
 
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Column(children: [
-        Obx(() => Text('分类当前store里面的数值: ${userfind.count.value}')),
+        Obx(() => Text('分类当前store里面的数值: ${userController.count.value}')),
         ElevatedButton(
             onPressed: () {
               //不建议这么改，这样会导致数据的改变无法追踪，尽量调用方法去使用
-              userfind.count.value = 10;
+              // userfind.count.value = 10;
+              userController.reset();
             },
-            child: Text("重置"))
+            child: const Text("重置"))
       ]),
     );
   }

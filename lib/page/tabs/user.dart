@@ -12,17 +12,17 @@ class UserPage extends StatefulWidget {
 
 class _UserPageState extends State<UserPage> {
   //我要改变数据，就使用Get.put
-  final UserController user = Get.find<UserController>();
+  final UserController userController = Get.find<UserController>();
 
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Column(
         children: [
-          Obx(() => Text('Count: ${user.count.value}')),
+          Obx(() => Text('Count: ${userController.count.value}')),
           ElevatedButton(
               onPressed: () {
-                user.increment();
+                userController.increment();
               },
               child: Text("测试状态管理类似于vuex，去分类页面看看"))
         ],

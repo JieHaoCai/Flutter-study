@@ -79,11 +79,11 @@ class AppPage {
         page: () => MyInputPage(),
         transition: Transition.rightToLeft //设置单个页面跳转的方式
         ),
-    // GetPage(
-    //     name: "/mywebview",
-    //     page: () => const MyWebviewPage(),
-    //     transition: Transition.rightToLeft //设置单个页面跳转的方式
-    //     ),
+    GetPage(
+        name: "/mywebview",
+        page: () => const MyWebviewPage(),
+        transition: Transition.rightToLeft //设置单个页面跳转的方式
+        ),
   ];
 }
 
