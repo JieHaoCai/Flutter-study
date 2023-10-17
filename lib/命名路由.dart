@@ -22,7 +22,9 @@ class MyApp extends StatelessWidget {
       // home: Tabs(),
       //命名路由
       routes: {
-        "/search": (context) => const SearchPage(),
+        "/search": (context) => SearchPage(
+              title: '',
+            ),
         "/": (context) => const HomePage(),
         "/categroy": (context) => const CatrgroyPage()
       },

@@ -23,6 +23,7 @@ class _CatrgroyPageState extends State<CatrgroyPage> {
             onPressed: () {
               //不建议这么改，这样会导致数据的改变无法追踪，尽量调用方法去使用
               // userfind.count.value = 10;
+              //建议这么修改
               userController.reset();
             },
             child: const Text("重置"))

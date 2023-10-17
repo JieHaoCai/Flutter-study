@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class LoginPage extends StatelessWidget {
-  final msg; //意味着之后会有参数
-  const LoginPage({super.key, this.msg});
+  const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {

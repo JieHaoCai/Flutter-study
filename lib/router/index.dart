@@ -13,6 +13,7 @@ import '../page/anmationListDemo.dart';
 import '../page/getxstatedemo.dart';
 import '../page/inputdemo.dart';
 import '../page/webviewdemo.dart';
+import '../page/i18ndemo.dart';
 //引入中间件
 import 'middleware/shopMiddleware.dart';
 
@@ -61,7 +62,9 @@ class AppPage {
         ),
     GetPage(
         name: "/search",
-        page: () => const SearchPage(),
+        page: () => SearchPage(
+              title: '',
+            ),
         transition: Transition.leftToRight //设置单个页面跳转的方式
         ),
     GetPage(
@@ -82,6 +85,11 @@ class AppPage {
     GetPage(
         name: "/mywebview",
         page: () => const MyWebviewPage(),
+        transition: Transition.rightToLeft //设置单个页面跳转的方式
+        ),
+    GetPage(
+        name: "/myi18n",
+        page: () => const MyI18NPage(),
         transition: Transition.rightToLeft //设置单个页面跳转的方式
         ),
   ];

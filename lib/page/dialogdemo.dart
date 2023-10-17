@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:get/get.dart';
 
 class DialogPage extends StatefulWidget {
   const DialogPage({super.key});
@@ -109,6 +110,10 @@ class _DialogPageState extends State<DialogPage> {
         fontSize: 16.0);
   }
 
+  void _getxtoast() {
+    Get.snackbar("提示", "这是一个提示", backgroundColor: Colors.white);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -123,7 +128,8 @@ class _DialogPageState extends State<DialogPage> {
           ElevatedButton(
               onPressed: _selectDialog, child: const Text("select弹出框")),
           ElevatedButton(onPressed: _modelDialog, child: const Text("底部弹出框")),
-          ElevatedButton(onPressed: _toast, child: const Text("Toast弹出框"))
+          ElevatedButton(onPressed: _toast, child: const Text("Toast弹出框")),
+          ElevatedButton(onPressed: _getxtoast, child: const Text("GetXToast"))
         ],
       )),
     );

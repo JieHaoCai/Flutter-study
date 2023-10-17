@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
                 //     MaterialPageRoute(builder: (context) {
                 //   return const MessagePage();
                 // }), (route) => false);
-                Get.offAll(const MessagePage());
+                // Get.offAll(const MessagePage());
               },
               child: const Text("命名路由跳转")),
           ElevatedButton(
@@ -41,7 +41,7 @@ class _HomePageState extends State<HomePage> {
               child: const Text("类似轮播效果或者抖音效果")),
           ElevatedButton(
               onPressed: () {
-                Navigator.of(context).pushNamed("/pagebuilder");
+                Navigator.of(context).pushNamed("/pagebuilder",arguments: {});
               },
               child: const Text("使用pageBuilder")),
           ElevatedButton(
@@ -69,6 +69,11 @@ class _HomePageState extends State<HomePage> {
                 Get.toNamed("/mywebview");
               },
               child: const Text("测试webview相关业务")),
+          ElevatedButton(
+              onPressed: () {
+                Get.toNamed("/myi18n");
+              },
+              child: const Text("测试国际化相关业务")),
         ],
       ),
     );

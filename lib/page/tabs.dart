@@ -35,10 +35,10 @@ class _MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin {
   int _currentIndex = 0;
   // 引入其他页面
   final List<Map<String, dynamic>> _pages = [
-    {"title": '首页', "component": HomePage(), "icon": Icons.home},
-    {"title": '分类', "component": CatrgroyPage(), "icon": Icons.category},
-    {"title": '消息', "component": MessagePage(), "icon": Icons.message},
-    {"title": '设置', "component": SettingPage(), "icon": Icons.settings},
+    {"title": '首页', "component": const HomePage(), "icon": Icons.home},
+    {"title": '分类', "component": const CatrgroyPage(), "icon": Icons.category},
+    {"title": '消息', "component": const MessagePage(), "icon": Icons.message},
+    {"title": '设置', "component": const SettingPage(), "icon": Icons.settings},
     {"title": '用户', "component": UserPage(), "icon": Icons.person}
   ];
 
@@ -48,7 +48,7 @@ class _MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin {
     void navigata() {
       // Navigator.of(context).push(MaterialPageRoute(builder: (context) {
       //   //跳转并传参
-      //   return const SearchPage(
+      //   return SearchPage(
       //     title: '你好',
       //   );
       // }));

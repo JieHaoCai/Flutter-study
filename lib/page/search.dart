@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 class SearchPage extends StatefulWidget {
   final String title;
 
-  const SearchPage({Key? key, this.title = '搜索'}) : super(key: key);
+  SearchPage({Key? key, required this.title}) : super(key: key);
 
   @override
   State<SearchPage> createState() => _SearchPageState();
@@ -31,6 +31,7 @@ class _SearchPageState extends State<SearchPage> {
           children: [
             Text('传递的消息: $msg'),
             Text('URL 参数 hello: $hello'),
+            // Text("dadada")
           ],
         ),
       ),

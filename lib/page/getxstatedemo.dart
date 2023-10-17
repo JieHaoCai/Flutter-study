@@ -10,21 +10,21 @@ class MyGetXState extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("测试getx的响应式状态管理")),
+      appBar: AppBar(title: const Text("测试getx的响应式状态管理")),
       body: Column(
         children: [
           Container(
               child: Obx(
             () => Text(
               "当前的数值 ${_counter.value}",
-              style: TextStyle(fontSize: 30),
+              style: const TextStyle(fontSize: 30),
             ),
           )),
           ElevatedButton(
               onPressed: () {
                 _counter.value = 0;
               },
-              child: Text("RESET"))
+              child: const Text("RESET"))
         ],
       ),
       floatingActionButton: FloatingActionButton(

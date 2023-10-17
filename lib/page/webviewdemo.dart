@@ -24,7 +24,8 @@ class _MyWebviewPageState extends State<MyWebviewPage> {
       //默认是不开启的，手动开启支持js
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
       ..setUserAgent(
-          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36")
+          // "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36"
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36")
       ..loadRequest(Uri.parse('https://www.csdn.net/'), headers: {})
       //这个方法可以用来跟html页面交互
       // ..addJavaScriptChannel(name, onMessageReceived: onMessageReceived)
