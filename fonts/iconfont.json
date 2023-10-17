@@ -1,0 +1,23 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "8149300",
+      "name": "免费wifi",
+      "font_class": "mianfeiwifi",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "15933094",
+      "name": "微信",
+      "font_class": "weixin",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    }
+  ]
+}
