@@ -284,6 +284,14 @@ sudo gem uninstall activesupport -v 最新版
 
 与其说是教程，不如说是讲**如何站在前端的角度**去看待Flutter框架，推荐安装`Getx`配合使用，Flutter是一款轻量级的框架，很多额外的功能都使用插件来配合完成。
 
+GetX：
+
+```
+https://github.com/jonataslaw/getx/blob/master/README.zh-cn.md
+```
+
+
+
 
 
 所以，你可以像这样安装我的依赖
@@ -1026,3 +1034,4 @@ class ZhCN extends Translations {
 ## 网络Api
 
 使用dio，待补充
+

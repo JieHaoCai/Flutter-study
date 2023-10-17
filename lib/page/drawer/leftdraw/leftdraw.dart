@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class LeftDraw extends StatefulWidget {
   const LeftDraw({super.key});
@@ -50,12 +51,13 @@ class _LeftDrawState extends State<LeftDraw> {
                   flex: 1,
                   child: UserAccountsDrawerHeader(
                       decoration: BoxDecoration(
-                          // color: Colors.yellow,
-                          image: DecorationImage(
-                              image: NetworkImage(
-                                  "https://www.itying.com/images/flutter/2.png"),
-                              fit: BoxFit.cover)),
-                      accountName: Text("蔡杰浩"),
+                        // color: Colors.yellow,
+                        image: DecorationImage(
+                            image: NetworkImage(
+                                "https://www.itying.com/images/flutter/2.png"),
+                            fit: BoxFit.cover),
+                      ),
+                      accountName: Text("JsonTsai"),
                       currentAccountPicture: CircleAvatar(
                         backgroundImage: NetworkImage(
                             "https://www.itying.com/images/flutter/3.png"),

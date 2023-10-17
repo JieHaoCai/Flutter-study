@@ -38,6 +38,7 @@ dependencies:
   get:
   dio: ^5.3.3
   webview_flutter: ^4.4.1
+  transparent_image:
 
 dev_dependencies:
   flutter_test:
