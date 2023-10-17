@@ -1,21 +1,20 @@
 import 'package:dio/dio.dart';
 
 class BaseApi {
-  static const String baseUrl = 'https://api.example.com';
+  static const String baseUrl = 'http://m-lt.bliiblii.com';
 
   final Dio _dio = Dio(
     BaseOptions(
-      baseUrl: baseUrl,
-      connectTimeout: const Duration(milliseconds: 5000),
-      receiveTimeout: const Duration(milliseconds: 5000),
-      //这种方式以 application/x-www-form-urlencoded 格式编码，默认是json格式的
-      // contentType: Headers.formUrlEncodedContentType
-    ),
+        baseUrl: baseUrl,
+        connectTimeout: const Duration(milliseconds: 5000),
+        receiveTimeout: const Duration(milliseconds: 5000),
+        //这种方式以 application/x-www-form-urlencoded 格式编码，默认是json格式的
+        contentType: Headers.formUrlEncodedContentType),
   );
 
   //get请求
-  Future<Map<String, dynamic>> get(String path,
-      {Map<String, dynamic>? params, String? conf}) async {
+  Future<Map<String, dynamic>> get(
+      String path, Map<String, dynamic>? params, String? conf) async {
     final response = await _dio.get(
       path,
       queryParameters: params,
@@ -30,9 +29,9 @@ class BaseApi {
 
   //post请求
   Future<Map<String, dynamic>> post(
-    String path, {
+    String path,
     Map<String, dynamic>? data,
-  }) async {
+  ) async {
     final response = await _dio.post(
       path,
       data: data,

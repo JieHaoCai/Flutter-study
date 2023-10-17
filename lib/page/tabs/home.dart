@@ -14,7 +14,8 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Column(
+      child: ListView(
+        padding: EdgeInsets.fromLTRB(80, 20, 80, 80),
         children: [
           const Text('首页'),
           ElevatedButton(
@@ -41,7 +42,7 @@ class _HomePageState extends State<HomePage> {
               child: const Text("类似轮播效果或者抖音效果")),
           ElevatedButton(
               onPressed: () {
-                Navigator.of(context).pushNamed("/pagebuilder",arguments: {});
+                Navigator.of(context).pushNamed("/pagebuilder", arguments: {});
               },
               child: const Text("使用pageBuilder")),
           ElevatedButton(
@@ -74,6 +75,16 @@ class _HomePageState extends State<HomePage> {
                 Get.toNamed("/myi18n");
               },
               child: const Text("测试国际化相关业务")),
+          ElevatedButton(
+              onPressed: () {
+                Get.toNamed("/mypic");
+              },
+              child: const Text("测试渐进式图片加载")),
+          ElevatedButton(
+              onPressed: () {
+                Get.toNamed("/testreq");
+              },
+              child: const Text("测试网络请求")),
         ],
       ),
     );

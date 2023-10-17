@@ -1,8 +1,8 @@
 import './baseApi.dart';
 
 class UserApi extends BaseApi {
-  Future<Map<String, dynamic>> getUserInfo(String userId) async {
-    return await get('/user/$userId');
+  Future<Map<String, dynamic>> getUserInfo(data) async {
+    return await post('/vip/product', data);
   }
 }
 

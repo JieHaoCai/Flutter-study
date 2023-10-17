@@ -14,6 +14,8 @@ import '../page/getxstatedemo.dart';
 import '../page/inputdemo.dart';
 import '../page/webviewdemo.dart';
 import '../page/i18ndemo.dart';
+import '../page/picloaddemo.dart';
+import '../page/testRequestdemo.dart';
 //引入中间件
 import 'middleware/shopMiddleware.dart';
 
@@ -90,6 +92,16 @@ class AppPage {
     GetPage(
         name: "/myi18n",
         page: () => const MyI18NPage(),
+        transition: Transition.rightToLeft //设置单个页面跳转的方式
+        ),
+    GetPage(
+        name: "/mypic",
+        page: () => const MyPic(),
+        transition: Transition.rightToLeft //设置单个页面跳转的方式
+        ),
+    GetPage(
+        name: "/testreq",
+        page: () =>  MyRequest(),
         transition: Transition.rightToLeft //设置单个页面跳转的方式
         ),
   ];
